@@ -1,8 +1,36 @@
-<html>
-<head>
-    <title>Register</title>
-</head>
-<body>
-    
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Customer Registration</title>
+    </head>
+    <body style="font-family: consolas">
+        <h2 style="margin-left: 20px">New? Register here:</h2>
+        <% if (err) { %>
+            <div style="background-color: #fa8072; width: 300px; margin-left: 20px; padding: 1px 20px; margin-bottom: 20px; color: black; font-family: Oswald">
+                <p><%= err.message %></p>
+            </div>
+        <% } %>
+        <form action="/customers/register" method="POST" style="margin-left: 20px">
+            <label>Username: </label>
+            <input type="text" name="username" value="<%= err ? username : '' %>" style="display: block" />
+            <br>
+            <label>Password: </label>
+            <input type="text" name="password" value="<%= err ? password : '' %>" style="display: block" />
+            <br>
+            <label>First Name: </label>
+            <input type="text" name="first_name" value="<%= err ? first_name : '' %>" style="display: block" />
+            <br>
+            <label>Last Name: </label>
+            <input type="text" name="last_name" value="<%= err ? last_name : '' %>" style="display: block" />
+            <br>
+            <label>Email: </label>
+            <input type="email" name="email" value="<%= err ? email : '' %>" style="display: block" />
+            <br>
+            <button type="submit" style="font-family: consolas; cursor: pointer;">Register</button>
+        </form>
+        <p style="margin-left: 20px; margin-top: 40px"><a href="/" style=" color: lightseagreen;">Back Home</a></p>
+    </body>
 </html>

@@ -3,4 +3,4 @@ const ProductController = require('../controllers/products.js');
 
 product.get('/', ProductController.showAll);
 
-module.exports = customer;
+module.exports = product;
