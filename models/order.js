@@ -4,9 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     CustomerId: DataTypes.INTEGER,
     FrameId: DataTypes.INTEGER,
     HandlebarId: DataTypes.INTEGER,
-    GearId: DataTypes.INTEGER,
-    TireId: DataTypes.INTEGER,
-    CargoId: DataTypes.INTEGER,
     RimId: DataTypes.INTEGER,
     totalPrice: DataTypes.INTEGER,
     finished: DataTypes.BOOLEAN
@@ -15,9 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     Order.belongsTo(models.Customer, {onDelete: 'cascade'});
     Order.belongsTo(models.Frame, {onDelete: 'cascade'});
     Order.belongsTo(models.Handlebar, {onDelete: 'cascade'});
-    Order.belongsTo(models.Gear, {onDelete: 'cascade'});
-    Order.belongsTo(models.Tire, {onDelete: 'cascade'});
-    Order.belongsTo(models.Cargo, {onDelete: 'cascade'});
     Order.belongsTo(models.Rim, {onDelete: 'cascade'});
   };
   return Order;

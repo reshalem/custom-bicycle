@@ -1,8 +1,28 @@
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
-    
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Customer Login</title>
+    </head>
+    <body style="font-family: consolas">
+        <h2 style="margin-left: 20px">Log in here:</h2>
+        <p style="font-size: 11px; margin-left: 20px; margin-bottom: 30px;">Haven't register yet? <a href="/register" style="color: lightseagreen">Register here</a></p>
+        <% if (err) { %>
+            <div style="background-color: #d71f5a; width: 300px; margin-left: 20px; padding: 1px 20px; margin-bottom: 20px; color: #f5f5f5; font-family: Oswald">
+                <p><%= err.message %></p>
+            </div>
+        <% } %>
+        <form action="/login" method="POST" style="margin-left: 20px">
+            <label>Username: </label>
+            <input type="text" name="username" value="<%= err ? username : '' %>" autofocus style="display: block" />
+            <br>
+            <label>Password: </label>
+            <input type="text" name="password" value="<%= err ? password : '' %>" style="display: block" />
+            <br>
+            <button type="submit" style="font-family: consolas; cursor: pointer;">Log In</button>
+        </form>
+        <p style="margin-left: 20px; margin-top: 40px"><a href="/" style=" color: lightseagreen;">Back Home</a></p>
+    </body>
 </html>

@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Order</title>
+        <style>
+        img {
+        
+        max-width: 75%;
+        height: 50%;
+        }
+        table, td, th {    
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 15px;
+        }
+        .right {
+            float:right;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <center><h2>PREVIEW</h2></center>
+        <center><img src='/img/result/<%=frameData.id%><%=handlebarData.id%><%=rimData.id%>.jpg'></center>
+        <!-- <%= JSON.stringify(frameData) %>
+        <%= JSON.stringify(handlebarData) %>
+        <%= JSON.stringify(rimData) %> -->
+        <br>
+        
+        <table>
+            <tr>
+                <th>Sparepart</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Frame</td>
+                <td><%= frameData.frame_name %></td>
+                <td><%= frameData.frame_price %></td>
+            </tr>
+            <tr>
+                <td>Handlebar</td>
+                <td><%= handlebarData.handlebar_name %></td>
+                <td><%= handlebarData.handlebar_price %></td>
+            </tr>
+            <tr>
+                <td>Rims</td>
+                <td><%= rimData.rim_name %></td>
+                <td><%= rimData.rim_price %></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table>
+            <tr>
+                <th>Total Price : </th>
+                <th><%= frameData.frame_price+handlebarData.handlebar_price+rimData.rim_price %></th>
+            </tr>
+        </table>
+        <!-- <h2 class='left'>Total Price : <%= frameData.frame_price+handlebarData.handlebar_price+rimData.rim_price %></h2> -->
+        <form action='/products/finish' method='POST' />
+        <input type='hidden' name='FrameId' value='<%=frameData.id%>' />
+        <input type='hidden' name='HandlebarId' value='<%=handlebarData.id%>' />
+        <input type='hidden' name='RimId' value='<%=rimData.id%>' />
+        <input type='hidden' name='totalPrice' value='<%= frameData.frame_price+handlebarData.handlebar_price+rimData.rim_price %>' />
+        <input type="hidden" name="finished" value="true" />
+        <br>
+        <br>
+        <center><input class='right' type='submit' value='Continue'></center>
+        <br>
+        <p style="margin-left: 20px; margin-top: 40px"><a href="/products" style=" color: lightseagreen;">Back to Products</a></p>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Edit Profile</title>
+    </head>
+    <body style="font-family: consolas">
+        <h2 style="margin-left: 20px">Edit your profile here:</h2>
+        <% if (err) { %>
+            <div style="background-color: #d71f5a; width: 300px; margin-left: 20px; padding: 1px 20px; margin-bottom: 20px; color: #f5f5f5; font-family: Oswald">
+                <% let messages = err.message.split(',') %>
+                <% for (let i = 0; i < messages.length; i++) { %>
+                    <p><%= messages[i] %></p>
+                <% } %>
+            </div>
+        <% } %>
+        <form action="/customers/edit" method="POST" style="margin-left: 20px">
+            <input type="hidden" name="id" value="<%= customer.id %>" />
+            <label>Username: </label>
+            <input type="text" name="username" value="<%= customer.username %>" autofocus style="display: block" />
+            <br>
+            <label>First Name: </label>
+            <input type="text" name="first_name" value="<%= customer.first_name %>" style="display: block" />
+            <br>
+            <label>Last Name: </label>
+            <input type="text" name="last_name" value="<%= customer.last_name %>" style="display: block" />
+            <br>
+            <label>Email: </label>
+            <input type="email" name="email" value="<%= customer.email %>" style="display: block" />
+            <br>
+            <button type="submit" style="font-family: consolas; cursor: pointer;">Edit</button>
+        </form>
+        <p style="margin-left: 20px; margin-top: 40px"><a href="/customers" style=" color: lightseagreen;">Back to Profile</a></p>
+    </body>
+</html>

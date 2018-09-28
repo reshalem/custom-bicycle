@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Customer Profile</title>
+    </head>
+    <body style="font-family: consolas">
+        <h1 style="margin-left: 20px; margin-top: 40px">Your Profile Data</h1>
+        <table cellspacing="20">
+            <thead>
+                <tr>
+                    <th><u>Username</u></th>
+                    <th><u>First name</u></th>
+                    <th><u>Last Name</u></th>
+                    <th><u>Joined</u></th>
+                    <th><u>Email</u></th>
+                    <td><u>Order</u></td>
+                    <th><u>Option</u></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= customer.username %></td>
+                    <td><%= customer.first_name %></td>
+                    <td><%= customer.last_name %></td>
+                    <td><%= convertDate(customer.createdAt) %></td>
+                    <td><%= customer.email %></td>
+                    <td>
+                        <p>Frame:  <%= customer.Frames[0].frame_name %></p>
+                        <p>Handlebar:  <%= customer.Handlebars[0].handlebar_name %></p>
+                        <p>Rim:  <%= customer.Rims[0].rim_name %></p>
+                    </td>
+                    <td><a href="/customers/edit">Edit Profile</a> | <a href="/customers/logout">Log Out</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin-left: 20px; margin-top: 30px"><a href="/" style=" color: lightseagreen">Back Home</a></p>
+    </body>
+</html>

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     gear_price: DataTypes.INTEGER
   }, {});
   Gear.associate = function(models) {
-    Gear.belongsToMany(models.Customer, {through: models.Order});
+    // Gear.belongsToMany(models.Customer, {through: models.Order});
   };
   return Gear;
 };
