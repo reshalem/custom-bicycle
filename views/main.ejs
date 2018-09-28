@@ -31,6 +31,7 @@ img {
 </style>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
 <!-- <a href = '/products'>aaaa</a> -->
 <form action='/products/order' method='POST' >
 
@@ -72,7 +73,7 @@ img {
             <img src="/img/handlebar_powerful.jpg" alt="dean">
             <h2>Aero</h2>
             <!-- <p>$ 500</p> -->
-            <center><input type='radio' name='handlebar_id' value='1'></center>
+            <center><input type='radio' name='handlebar_id' value='2'></center>
           </div>
         </div>
 </div>
@@ -87,19 +88,19 @@ img {
   </div>
   <div class="column" style="background-color:#bbb;">
     <img src="/img/rims_carbon.jpg" alt="rims">
-    <h2>Superteam</h2>
+    <h2>MTB</h2>
     <!-- <p>Some text..</p> -->
     <center><input type='radio' name='rims_id' value='2'></center>
   </div>
   <div class="column" style="background-color:#bbb;">
       <img src="/img/rims_carbon.jpg" alt="rims">
-      <h2>Carbon v2</h2>
+      <h2>MTB v2</h2>
       <!-- <p>Some text..</p> -->
       <center><input type='radio' name='rims_id' value='2'></center>
     </div>
 <br>
 <right><input type="submit" value="Order"></right>
-</form>
+
 </form>
 
 </body>

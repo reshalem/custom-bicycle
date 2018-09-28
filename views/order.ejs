@@ -29,9 +29,8 @@
         </style>
     </head>
     <body>
-        <h2>Order</h2>
-        <h2>PREVIEW</h2>
-        <center><img src='/img/result/<%=frameData.id%><%=handlebarData.id%><%=rimData.id%>.png'></center>
+        <center><h2>PREVIEW</h2></center>
+        <center><img src='/img/result/<%=frameData.id%><%=handlebarData.id%><%=rimData.id%>.jpg'></center>
         <!-- <%= JSON.stringify(frameData) %>
         <%= JSON.stringify(handlebarData) %>
         <%= JSON.stringify(rimData) %> -->
@@ -75,9 +74,10 @@
         <input type='hidden' name='RimId' value='<%=rimData.id%>'>
         <input type='hidden' name='TotalPrice' value='<%= frameData.frame_price+handlebarData.handlebar_price+rimData.rim_price %>'
         <br>
-        <center><input class='right' type='submit' value='Continue'></center>
+        <button class='right' action= type="button">Back</button><input class='right' type='submit' value='Continue'>
         <br>
         </form>
+        
 
     </body>
 </html>
