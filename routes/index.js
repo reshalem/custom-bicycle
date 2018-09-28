@@ -6,7 +6,7 @@ router.use('/customers', customer);
 router.use('/products', product);
 
 router.get('/', function(req, res) {
-    res.render('home');
+    res.render('main');
 });
 
 module.exports = router;

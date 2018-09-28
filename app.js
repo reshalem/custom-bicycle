@@ -7,6 +7,8 @@ const router = require('./routes/index.js');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use( express.static( "public" ) );
+
 app.use('/', router);
 
 app.listen(port, function(req, res) {
